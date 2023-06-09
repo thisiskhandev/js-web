@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,
+	th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+</style>
+
+<body>
+	<script>
+		let thData = ["AGE", "NAME", "EDUCATION", "CITY"]
+		let data = [
+			[25, "ALI", "INTER", "DB"],
+			[30, "WALEED", "MASTER", "LHR"],
+			[20, "HASSAN", "BSCS", "KHI"],
+			[30, "WALEED", "MASTER", "LHR"]
+		];
+		document.write("<table>");
+		for (let index = 0; index < thData.length; index++) {
+			document.write("<th>" + thData[index] + "</th>");
+		}
+		document.write("<tr>");
+		for (let indexx = 0; indexx < data.length; indexx++) {
+			document.write("<td>" + data[0][indexx] + "</td>");
+		}
+		document.write("</tr>");
+		document.write("<tr>");
+		for (let indexx = 0; indexx < data.length; indexx++) {
+			document.write("<td>" + data[1][indexx] + "</td>");
+		}
+		document.write("</tr>");
+		document.write("<tr>");
+		for (let indexx = 0; indexx < data.length; indexx++) {
+			document.write("<td>" + data[2][indexx] + "</td>");
+		}
+		document.write("</tr>");
+
+		document.write("<tr>");
+		for (let indexx = 0; indexx < data.length; indexx++) {
+			document.write("<td>" + data[3][indexx] + "</td>");
+		}
+		document.write("</tr>");
+		document.write("</table>");
+	</script>
+</body>
+
+</html>

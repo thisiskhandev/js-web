@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert Box condition</title>
+  </head>
+  <body>
+    <button onclick="myfun()">Click me</button>
+    <p id="root"></p>
+    <pre id="dim"></pre>
+    <script>
+      function myfun() {
+        let txt;
+        if (confirm("Press a button!")) {
+          txt = "you pressed OK!";
+        } else {
+          txt = "You pressed CANCEL!";
+        }
+        document.getElementById("root").innerHTML = txt;
+      }
+
+      document.getElementById("dim").innerHTML =
+        "Screen size: " + screen.width + "x" + screen.height;
+    </script>
+  </body>
+</html>

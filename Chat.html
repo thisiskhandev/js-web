@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="chatstyle.css">
+	<title>Chat</title>
+</head>
+
+<body>
+	<!-- <section>
+		<main class="d-flex agent">
+			<img src="./Images/agent-min.png" alt="agent" width="50px" height="50px">
+			<div class="d-flex f-column">
+				<h3>Agent</h3>
+				<p>How are you?</p>
+			</div>
+		</main>
+
+		<main class="d-flex visitor">
+			<img src="./Images//vistor-min.png" alt="visitor" width="50px" height="50px">
+			<div class="d-flex f-column">
+				<h3>Visitor</h3>
+				<p>Good I'm fine!</p>
+			</div>
+		</main>
+	</section> -->
+	<script>
+		let agentQues = ["how are you?", "how was the day?", "how may I help you?"];
+		let visitorAns = ["I'm good", "It wasn't bad", "well I've a question!"];
+		function chatJS() {
+			document.write("<section>")
+			for (var agent = 0; agent < agentQues.length; agent++) {
+				// console.log(agentQues[0]);
+				document.write(`<main class="d-flex agent">
+				<img src = "./Images/agent.png" alt = "agent" width = "50px" height = "50px">
+				<div class="d-flex f-column">
+				<h3>Agent</h3>
+				<p>${agentQues[agent]}</p>
+				</div>
+				</main >`)
+				for (var vistor = 0; vistor < 1; vistor++) {
+					document.write(`<main class="d-flex visitor">
+				<img src="./Images/visitor.png" alt="visitor" width="50px" height="50px">
+				<div class="d-flex f-column">
+				<h3>Visitor</h3>
+				<p>${visitorAns[agent]}</p>
+				</div>
+				</main >`)
+				}
+			}
+			document.write("</section>")
+		}
+		chatJS();
+		// sleep function
+		function sleep(milliseconds) {
+			var start = new Date().getTime();
+			for (var i = 0; i < 1e7; i++) {
+				if ((new Date().getTime() - start) > milliseconds) {
+					break;
+				}
+			}
+		}
+		console.log('First');
+		sleep(1000);
+		console.log('Second');
+		sleep(1000);
+		console.log('Third');
+		// timout function
+		setTimeout(function () {
+			timing();
+		}, 5000);
+		function timing() {
+			for (var time = 1; time <= 3; time++) {
+				console.log("Time " + time);
+			}
+		}
+	</script>
+</body>
+
+</html>

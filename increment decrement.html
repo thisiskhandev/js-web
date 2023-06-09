@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Click increment decrement</title>
+</head>
+
+<body>
+	<h3 id="result">0</h3>
+	<button onclick="increment()">+</button>
+	<button onclick="reset()">Reset</button>
+	<button onclick="decrement()">-</button>
+
+	<script>
+		let result = document.getElementById("result");
+		count = 0;
+		function increment() {
+			updateDisplay(count++);
+		}
+		function reset() {
+			count = 0;
+			updateDisplay(count);
+		}
+		function decrement() {
+			updateDisplay(count--)
+		}
+		function updateDisplay(theVal) {
+			result.innerText = theVal;
+		}
+	</script>
+</body>
+
+</html>

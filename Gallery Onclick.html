@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallery</title>
+</head>
+<style>
+	div>img {
+		cursor: pointer;
+		transition: .5s;
+	}
+
+	div>img:hover {
+		transform: scale(1.1);
+		transition: .5s;
+	}
+</style>
+
+<body>
+	<section>
+		<img src="https://picsum.photos/seed/picsum/600" width="500" height="500" id="mainShot">
+		<div>
+			<img src="https://picsum.photos/200/200?random=1" width="200" height="200" id="shot1" onclick="shots1()">
+			<img src="https://picsum.photos/200/200?random=2" width="200" height="200" id="shot2" onclick="shots2()">
+			<img src="https://picsum.photos/200/200?random=3" width="200" height="200" id="shot3" onclick="shots3()">
+		</div>
+	</section>
+
+	<script>
+		let mainShot = document.getElementById("mainShot");
+		let shot1 = document.getElementById("shot1");
+		let shot2 = document.getElementById("shot2");
+		let shot3 = document.getElementById("shot3");
+		function shots1() {
+			mainShot.src = shot1.src;
+		}
+		function shots2() {
+			mainShot.src = shot2.src;
+		}
+		function shots3() {
+			mainShot.src = shot3.src;
+		}
+	</script>
+</body>
+
+
+
+</html>

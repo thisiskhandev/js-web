@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Product Gallery</title>
+	<style type="text/css">
+		section > div {
+			margin: auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Product Gallery</h1>
+	<main>
+		<section>
+			<div id="theProduct">
+				<img src="https://picsum.photos/300?random=1"/>
+			</div>
+		</section>
+		<section id="productGallery">
+			<div></div>
+		</section>
+		
+	</main>
+	<script type="text/javascript">
+		
+		var theProduct = document.getElementById("theProduct");
+		var productGallery = document.getElementsByClassName("owl-carousel")[0];
+		// productGallery = productGallery.childNodes[4];
+		for(var i = 1; i <= 15; i++) {
+			productGallery.insertAdjacentHTML("beforeend", `
+				<div class="item">
+				<img src="https://picsum.photos/300?random=2">
+				</div>
+				`);
+		}
+	</script>
+</body>
+</html>

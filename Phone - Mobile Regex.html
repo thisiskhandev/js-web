@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Input Phone Field</title>
+  </head>
+  <body>
+    <input id="phone" type="tel" name="phone" value="" tabindex="111" />
+    <script>
+      // Used to format phone number and add placeholder and max-length
+      function phoneFormatter() {
+        jQuery(' input[type="tel"]').attr({ placeholder: "(___) ___-____" });
+        jQuery('input[type="tel"]').on("input", function () {
+          var number = jQuery(this).val().replace(/[^\d]/g, "");
+          if (number.length == 7) {
+            number = number.replace(/(\d{3})(\d{4})/, "$1-$2");
+          } else if (number.length == 10) {
+            number = number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+          }
+          jQuery(this).val(number);
+          jQuery('input[type="tel"]').attr({ maxLength: 10, minLength: 10 });
+        });
+        setField = 'input[type="tel"]';
+        console.log(setField.length);
+      }
+      jQuery(phoneFormatter);
+    </script>
+  </body>
+</html>

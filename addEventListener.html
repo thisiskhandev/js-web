@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>addEventListener</title>
+	<style>
+		div {
+			background-color: lightcoral;
+			height: 120px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 40px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="myDiv">This is just a box</div>
+</body>
+
+<script>
+	// document.getElementById("myDiv").onclick = theDiv;
+	// document.getElementById("myDiv").addEventListener("click", theDiv);
+	// function theDiv() {
+	// 	this.style.backgroundColor = "tomato";
+	// 	this.style.color = "#fff";
+	// }
+
+	document.getElementById("myDiv").addEventListener("click", function () {
+		this.style.color = "green";
+	})
+</script>
+
+</html>

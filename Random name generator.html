@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random Name Generator</title>
+	<style>
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			width: 100%;
+			flex-direction: column;
+			overflow: hidden;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
+		button {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<h1 id="name">Click on the button to see random name</h1>
+<button onclick="nameFun()">Click me!</button>
+
+<body>
+	<script>
+		let name = document.getElementById("name");
+		names = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah"]
+		function nameFun() {
+			name.innerText = names[Math.floor(Math.random() * names.length)];
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Multi Dimentional Array</title>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		// Multi Dimensional - Arrays
+		let arrays = [
+			["Harry", "Tom", "Jerry"], ["Sam", "Someone", "Item"], ["Ali", "Saad", "Khan"]
+		];
+		// console.log(arrays[0][1]);
+
+		for (let index = 0; index < arrays.length; index++) {
+			// document.write(arrays[index] + "<br>");
+			// for (let indexx = 0; indexx < arrays.length; indexx++) {
+			// 	document.write("Main#" + [index] + " Inner#" + [indexx] + "  -" + arrays[index] + "<br>" + [indexx]);
+			// }
+
+		}
+
+
+
+		// Method 2 - Arrays
+		let arr = new Array();
+		// arr[0] = 5;
+		// arr[1] = 5;
+		// arr[2] = 5;
+
+		// arr[0] = prompt("value 1");
+		// arr[1] = prompt("value 2");
+		// arr[2] = prompt("value 3");
+
+		// for (let value = 1; value < 4; value++) {
+		// 	arr[value] = prompt(`Enter value ${value}`);
+		// 	console.log(arr[value]);
+		// 	document.write(arr + "<br>");
+		// }
+
+
+		// console.log(arr.length);
+		// document.write(arr);
+
+		let idArr = new Array();
+		idArr[0] = 01;
+		idArr[1] = 02;
+		idArr[2] = 03;
+		let nameArr = new Array();
+		nameArr[0] = "Hassan";
+		nameArr[1] = "Sarah";
+		nameArr[2] = "Tom";
+		let ageArr = new Array();
+		let educationArr = new Array();
+
+		let sData = [
+			{
+				id: 01,
+				name: "Hassan",
+				age: 25,
+				education: "BSCS",
+				address: {
+					street: "Abc 123 house",
+					city: "Khi",
+					country: "Pakistan",
+					zipCode: 123455,
+				}
+			},
+			{
+				id: 02,
+				name: "Sara",
+				age: 20,
+				education: "BE",
+			},
+			{
+				id: 03,
+				name: "Tommy",
+				age: 30,
+				education: "MBBS",
+			},
+			{
+				id: 04,
+				name: "Waleed",
+				age: 30,
+				education: "MBBS",
+			},
+		];
+		console.log(sData);
+		document.write(sData[0].address.city);
+		document.write("<table>");
+		document.write("<th>" + "Student Id" + "</th>");
+		document.write("<th>" + "Name of Student" + "</th>");
+		document.write("<th>" + "Age" + "</th>");
+		document.write("<th>" + "Education" + "</th>");
+		for (let index = 0; index < sData.length; index++) {
+			document.write("<tr>");
+			document.write("<td>" + sData[index].id + "</td>");
+			document.write("<td>" + sData[index].name + "</td>");
+			document.write("<td>" + sData[index].age + "</td>");
+			document.write("<td>" + sData[index].education + "</td>");
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</body>
+
+</html>

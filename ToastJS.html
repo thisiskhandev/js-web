@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/01f977185f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+      integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+      }
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        bottom: 30px;
+        font-size: 17px;
+        right: 0;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+      #toastSnack {
+        background-color: #00bc8c;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        position: relative;
+        width: 300px;
+      }
+      #toastSnack * {
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        font-weight: 500;
+      }
+      .left {
+        width: 25%;
+      }
+      .right {
+        width: 75%;
+      }
+      .close {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 25px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+      span.close:hover {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p><i class="fas fa-address-book"></i> test</p>
+    <button onclick="myFunction()">Show Snackbar</button>
+
+    <div id="snackbar">Some text some message..</div>
+
+    <ul>
+      <li id="toast"></li>
+    </ul>
+
+    <section id="toastSnack">
+      <div class="left">
+        <img src="./Images/avatar1.png" alt="person" width="50" />
+      </div>
+      <div class="right">
+        <h4>Mr Andreson</h4>
+        <p>Has successfully purchased new item</p>
+      </div>
+      <button onclick="closeFun()" class="close" id="close">&times</button>
+    </section>
+
+    <h1></h1>
+
+    <script>
+      const closeBtn = document.getElementsByClassName("close")[0];
+      const toastSnack = document.getElementById("toastSnack");
+      const arr = ["Some text1", "Some text2", "Some text3", "Some text4"];
+      const nums = [1, 2, 3, 4, 5, 6];
+      const toast = document.getElementById("toast");
+      // closeBtn.click = function () {
+      //   toastSnack.style.backgroundColor = "red";
+      //   console.log("aaa");
+      // };
+      // toastSnack.click = function () {
+      //   toastSnack.style.backgroundColor = "pink";
+      // };
+      function closeFun() {
+        toastSnack.style.display = "none";
+      }
+      function myFunction() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+          toastSnack.style.display = "flex";
+        }, 300);
+      }
+      // myFunction();
+      // toast.innerHTML = arr + "<br>";
+      //  map method
+      // toast.innerHTML = nums.map(Math.sqrt);
+      // console.log(arr);
+    </script>
+
+    <script>
+      const title =
+        document.getElementById("toastSnack").childNodes[3].firstElementChild;
+      const textT =
+        document.getElementById("toastSnack").childNodes[3].children[1];
+      let titleArr = ["Ali", "harry", "Person 3", "Person 4"];
+      let detailsArr = [
+        "Has successfully purchased #123 item",
+        "Has successfully purchased #456 item",
+        "Has successfully purchased #789 item",
+        "Has successfully purchased #999 item",
+      ];
+      let bgToastColors = ["pink", "hotpink", "red", "lightgreen"]
+      let i = 0;
+      const QuoteTimer = () => {
+        if (i >= titleArr.length) {
+          i = 0;
+        }
+        $(title, textT).fadeOut(1000, function () {
+          $(title).text(titleArr[i]);
+          $(textT).text(detailsArr[i]);
+        });
+
+        $(title, textT).fadeIn();
+        i++;
+      };
+
+      $(document).ready(function () {
+        $(title).text(titleArr[i++]);
+        $(textT).text(detailsArr[i++]);
+        setInterval(QuoteTimer, 3000);
+      });
+
+      // title.innerText = titleArr[0];
+      // toastSnack.style.backgroundColor = "red";
+    </script>
+  </body>
+</html>

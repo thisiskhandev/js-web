@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.child1, .child2 {
+			width: 100px;
+			height: 100px;
+			background-color: skyblue;
+			margin: 5px;
+		}
+		.child2 {
+			background-color: tomato;
+			display: none;
+		}
+		.gk~.child2{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div class="child1"></div>
+		<div class="child2"></div>
+	</div>
+
+	<script type="text/javascript">
+		var child1 = document.getElementsByClassName("child1")[0];
+		// var child2 = document.getElementsByClassName("child2")[0];
+		
+		child1.addEventListener("click", function(){
+			child1.classList.add("gk");
+		})
+
+	</script>
+</body>
+</html>

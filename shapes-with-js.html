@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shapes with JS</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			font-family: verdana;
+		}
+	</style>
+</head>
+<body>
+	<h1>Shapes with JS</h1>
+	<h3>-------- Square --------</h3>
+	<br><br>
+	<h2></h2>
+</body>
+<script type="text/javascript">
+	var heading = document.getElementsByTagName("h2")[0];
+	// var rows = 5;
+	// var value = "*";
+	// for (var i = 0; i <= rows; i++) {
+	// 	heading.insertAdjacentHTML("afterbegin", i)
+	// 	// console.log(i);
+	// }
+
+	var numOfSquares = 5;
+	var stringSquare = "";
+	for(var i = 1; i<=numOfSquares; i++) {
+		for(var j=1; j<=numOfSquares; j++) {
+			stringSquare = stringSquare + "*";
+		}
+		stringSquare += "\n";
+	}
+	console.log(stringSquare);
+	heading.innerText = stringSquare;
+</script>
+</html>
+

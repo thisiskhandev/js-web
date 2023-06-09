@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filter method</title>
+</head>
+<body>
+  <h1>Filter method</h1>
+  <h3>Check console</h3>
+  <div>
+    <h2>Compare 2 sets</h2>
+    <button id="callback">Call back call</button>
+  </div>
+  <div>
+    <h4>Sort</h4>
+    <div id="sort"></div>
+  </div>
+  <!-- Fiter games -->
+  <script>
+    const characters = [
+    {
+      name: "Luke Skywalker",
+      height: "172",
+      mass: "77",
+      eye_color: "blue",
+      gender: "male",
+    },
+    {
+      name: "Darth Vader",
+      height: "202",
+      mass: "136",
+      eye_color: "yellow",
+      gender: "male",
+    },
+    {
+      name: "Leia Organa",
+      height: "150",
+      mass: "49",
+      eye_color: "brown",
+      gender: "female",
+    },
+    {
+      name: "Anakin Skywalker",
+      height: "88",
+      mass: "84",
+      eye_color: "blue",
+      gender: "male",
+    },
+    ];
+    const greater100Characters = characters.filter((characters) => {
+      return characters.height > 100;
+    });
+      // console.log(greater100Characters);
+      // document.write(JSON.stringify(characters));
+
+      // FILTEROUT ONLY FICTION
+      const books = [
+      {
+        id: 1,
+        author: "J.R.R Tolkien",
+        title: "The lord of the rings, The Fellowship of the Ring",
+        price: 8.54,
+        pages: 555,
+        category: "fiction",
+      },
+      {
+        id: 2,
+        author: "J.R.R Tolkien",
+        title: "The lord of the rings, The Two Towers",
+        price: 8.34,
+        pages: 467,
+        category: "fiction",
+      },
+      {
+        id: 3,
+        author: "J.K. Rowling",
+        title: "Harry Potter and the Philosopher's Stone",
+        price: 8.16,
+        pages: 345,
+        category: "fiction",
+      },
+      {
+        id: 4,
+        author: "Lewis Carroll",
+        title: "Alice in Wonderland",
+        price: 2.7,
+        pages: 86,
+        category: "fiction",
+      },
+      {
+        id: 5,
+        author: "C.S. Lewis",
+        title: "The Chronicles of Narnia",
+        price: 2.99,
+        pages: 118,
+        category: "fiction",
+      },
+      {
+        id: 6,
+        author: "Stephen Hawking",
+        title: "The universe in a nutshell",
+        price: 22.93,
+        pages: 224,
+        category: "science",
+      },
+      ];
+
+      const Ficttions = books.filter((callback) => {
+        return books.category = "fiction";
+      });
+      // console.log(Ficttions);
+
+
+    </script>
+
+    <!-- Find / Filter value from array -->
+    <!-- <script type="text/javascript">
+      let ageArr = new Array(1,2,3,4)
+      function checkAge(age) {
+        return age == 2;
+      }
+
+      let getAge = ageArr.filter(checkAge);
+
+      console.log(getAge);
+    </script> -->
+
+    <!-- Compare both arrays -->
+    <!-- <script type="text/javascript">
+      let arr1 = [0,1,2,3,4,5];
+      let arr2 = new Array (0,1,2,3,4,5);
+      console.log(arr1 === arr2); // It will shows a false result we need to convert into JSON.strinfy
+      console.log(JSON.stringify(arr1)); // [0,1,2,3,4,5]
+      console.log(arr1.toString()); // 0,1,2,3,4,5
+      // compare
+      console.log(arr1.toString() === arr2.toString()); // true
+      // compare with JSON
+      console.log(JSON.stringify(arr1) === JSON.stringify(arr2)); // true
+    </script> -->
+
+   <!--  <script type="text/javascript">
+      function intersect(a, b, c) {
+        let arr = new Array(a,b,c);
+        let ans = arr.join(" ");
+        console.log(JSON.stringify(ans));
+        return ans;
+      }
+      console.log(intersect(10, 20, 30));
+    </script> -->
+
+    <!-- Switch variable a to b -->
+    <!-- <script>
+      var a = prompt("enter first val");
+      var b = prompt("enter second val");
+
+      let temp;
+
+      temp = a;
+      a = b;
+      b = temp;
+
+      console.log(`The value of a after swapping ${a}`)
+      console.log(`The value of b after swapping ${b}`)
+    </script> -->
+
+    <!-- Callback function -->
+    <script>
+      let btn = document.getElementById("callback");
+      const callback = () => {
+        console.log("Calling from inside the function!")
+      }
+      btn.addEventListener("click", callback);
+
+      // Second example
+      function greet(name, callingback) {
+        console.log(`Hello, ${name}!`)
+        callingback();
+      }
+      function sayGoodbye() {
+        console.log("goodbye!");
+      }
+
+      greet("Khan", sayGoodbye);
+    </script>
+
+    <!-- Parameter vs Arguments -->
+    <!-- <script>
+      let stringg = "test";
+      function add (a, b) { // parameters
+        stringg = "The sum is: ";
+        return stringg+(a+b);
+      }
+      function sub(a, b) {
+        stringg = "The subtraction is: ";
+        return stringg+(a-b);
+      }
+      console.log(add(5,2), sub(5,2));// arguments
+    </script> -->
+
+    <!-- Sort fun -->
+    <script>
+      let names = ["khan", "hassan", "abdullah", "ali", "sallu", "salman", "bilal", "zzz"];
+      let numerics = [2,4,1,6,8,0,9];
+      let alphaNumerics = ["2",1,"salman","5","0","9", 2, 6, 7,"khan"];
+      document.getElementById("sort").innerText = names;
+    </script>
+
+    <!-- Spread operator -->
+    <script>
+      let array1 = [1, 2, 3];
+      let array2 = [4, 5, 6];
+      let combined = [...array1, ...array2];
+      console.log(combined);
+      console.log(array1);
+      console.log(...array1);
+      array2.forEach((el, ind)=> {
+        console.log(el);
+      })
+    </script>
+  </body>
+  </html>

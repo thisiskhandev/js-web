@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Group</title>
+  </head>
+  <style>
+    select#city option,
+    select#city optgroup {
+      color: #000;
+    }
+  </style>
+  <body>
+    <div class="row">
+      <div class="col-12">
+        <select name="city" id="city" required>
+          <option selected disabled>Select City</option>
+          <optgroup label="California">
+            <option value="San Bernardino">San Bernardino</option>
+            <option value="North Orange County">North Orange County</option>
+            <option value="South Orange County">South Orange County</option>
+            <option value="San Diego">San Diego</option>
+          </optgroup>
+          <optgroup label="Nevada">
+            <option value="Riverside">Riverside</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- PUT IN CONTACT FORM 7 MAIL BODY
+City: [city] -->

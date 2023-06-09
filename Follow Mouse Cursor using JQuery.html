@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Follow Mouse Cursor using JQuery</title>
+    <style>
+      body {
+        cursor: none;
+      }
+      #follow {
+        position: absolute;
+        left: 0;
+        transform: translate(-65px, -60px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="follow">
+      <img src="./Images/aim.png" alt="aim" />
+    </div>
+  </body>
+  <script>
+    $(document).mousemove(function (event) {
+      $("#follow").css({
+        left: event.pageX,
+        top: event.pageY,
+      });
+    });
+  </script>
+</html>

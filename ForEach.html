@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Each</title>
+  </head>
+  <body>
+    <script>
+      const favFruits = ["Mango", "banana", "apple", "carrot", "lemon"];
+      const favNumbers = [10, 20, 30, 40, 50];
+      //  console.log(favFruits[2]);
+      //  document.write(favFruits[1]);
+
+      //  for (let x = 0; x < favFruits.length; x++) {
+      //    console.log(favFruits[x]);
+      //  }
+
+      //  favFruits.forEach(function (element, indexNum, arr) {
+      //       console.log(indexNum + " -- " + element);
+      //  });
+
+      favNumbers.forEach(function (currElements, index, allArr) {
+        //    console.log(currElements + 100);
+        console.log(allArr[index] + 100);
+        document.write("<li>" + allArr[index] + 100 + "</li>");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML Navigation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      * :not(i) {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background-color: #eee;
+        height: 200vh;
+      }
+      li {
+        list-style-type: none;
+        display: inline-block;
+        width: 130px;
+        text-align: center;
+        background: #31b1f0;
+      }
+      li a {
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        height: 80px;
+        align-items: center;
+      }
+      nav {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background: #212121;
+        position: fixed;
+        top: 0;
+        transition: top 0.4s;
+      }
+      h2 {
+        color: #fff;
+      }
+      ul.submenu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+      }
+      ul.submenu li {
+        background: #299dd5;
+      }
+      li a:hover {
+        background: #1c5b7b;
+      }
+      li.drop_menu:hover ul {
+        visibility: visible;
+      }
+      ul.submenu {
+        visibility: hidden;
+      }
+      section#root {
+        margin-top: 100px;
+        padding: 15px;
+      }
+      #root h1 {
+        font-size: 40px;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+      }
+      #root p {
+        line-height: 1.8;
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navs">
+      <div id="logo">
+        <h2>Company name</h2>
+      </div>
+      <div id="menu">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li class="drop_menu">
+            <a href="#">Other</a>
+            <ul class="submenu">
+              <li><a href="#">Test1</a></li>
+              <li><a href="#">Test2</a></li>
+              <li><a href="#">Test3</a></li>
+              <li><a href="#">Test4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section id="root">
+      <div>
+        <h1>
+          Scroll down this frame to see the effect!<br />
+          Scroll up to show the navbar.
+        </h1>
+        <p>
+          Ullamco aliquip ullamco officia reprehenderit nostrud ad laboris
+          proident occaecat eu aute qui fugiat tempor. Amet veniam cillum
+          eiusmod exercitation id duis nisi proident exercitation veniam
+          voluptate pariatur. Enim ut excepteur proident cupidatat consectetur
+          commodo enim aliquip aliquip dolor id laborum amet mollit. Eu amet
+          duis occaecat irure excepteur tempor et esse. Mollit exercitation sint
+          incididunt est excepteur quis anim ea. Exercitation id fugiat nulla
+          commodo anim eiusmod deserunt minim Lorem.
+        </p>
+      </div>
+    </section>
+    <script>
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navs").style.top = "0";
+        } else {
+          document.getElementById("navs").style.top = "-80px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+  </body>
+</html>

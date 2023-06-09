@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallery Arrays</title>
+</head>
+<style>
+	div>img {
+		cursor: pointer;
+		transition: .5s;
+	}
+
+	div>img:hover {
+		transform: scale(1.1);
+		transition: .5s;
+	}
+
+	img.shots {
+		margin-right: 3px;
+	}
+</style>
+
+<body>
+	<section>
+		<img src="https://picsum.photos/seed/picsum/600" width="500" height="500" id="mainShot">
+	</section>
+
+	<script>
+		let mainShot = document.getElementById("mainShot");
+		let myShots = document.getElementsByClassName("myShots");
+		let array = ["https://picsum.photos/200/200?random=1", "https://picsum.photos/200/200?random=2", "https://picsum.photos/200/200?random=3", "https://picsum.photos/200/200?random=4"];
+		// console.log(arryImages[0]);
+		document.write("<div>");
+		for (let index = 0; index < array.length; index++) {
+			// console.log(array[index]);
+			document.write(`<img src=${array[index]} class="myShots" id=${"Shots" + index}>`);
+			// function gallShots() {
+			// 	mainShot.src = myShots[index].currentSrc;
+			// 	console.log(myShots[index].currentSrc);
+			// }
+			document.getElementById(`${"Shots" + index}`).addEventListener("click", function () {
+				console.log(array[index]);
+				mainShot.src = array[index];
+			})
+		}
+		document.write("</div>");
+
+		// console.log(lehShot[0].src);
+
+	</script>
+</body>
+
+
+
+</html>

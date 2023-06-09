@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <title>Toast Snackbar</title>
+  </head>
+  <body>
+    <div id="snackbar">
+      <img src="" alt="" id="photo" />
+      <p id="notifyText"></p>
+      <button
+        type="button"
+        id="change"
+        onclick="updateData()"
+        style="cursor: pointer"
+      >
+        Change / Update
+      </button>
+    </div>
+
+    <script>
+      let count = -1; //Start from 1
+      const showTxt = document.getElementById("notifyText");
+      const photo = document.getElementById("photo");
+      const toast = document.getElementById("snakbar");
+      const images = "https://i.pravatar.cc/300";
+      const showFunction = (num) => {
+        let array1 = ["Name 1", "Name 2", "Name 3", "Name 4", "Name 5"];
+        let array2 = [images, images, images, images, images];
+        showTxt.innerText = array1[num];
+        photo.src = array2[num];
+        photo.alt = array1[num];
+        console.log(num);
+        // Reseting to intial state
+        if (array2[num] == undefined && array1[num] == undefined) {
+          count = 0;
+          showFunction(count);
+        }
+      };
+      const updateData = () => {
+        //    count = count + 1;
+        count++;
+        showFunction(count);
+      };
+    </script>
+  </body>
+</html>

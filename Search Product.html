@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search Product</title>
+	<style>
+		:root {
+			--primary-font: system-ui;
+		}
+
+		body {
+			font-family: var(--primary-font);
+		}
+
+		div img {
+			width: 250px;
+			height: 250px;
+			object-fit: cover;
+			margin: 2px;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Search Product name</h3>
+	<pre>for e.g: Fish, Panda, Elephant</pre>
+	<input type="text" name="" id="search" onchange="searching()">
+	<button onclick="reset()">Reset</button>
+	<input id="list" list="suggestions" onchange="">
+	<datalist id="suggestions">
+		<!-- <option value="Black"> -->
+	</datalist>
+	<p id="demo">searching...</p>
+	<div id="showData">
+	</div>
+	<script>
+		let lists = [
+			'Fish',
+			'Elephant',
+			'Panda',
+			'Tiger'
+		]
+		let fish = [
+			'/Images/fish1.jpg',
+			'/Images/fish2.jpg',
+			'/Images/fish3.jpg',
+		];
+		let elephant = [
+			'/Images/elephant1.jpg',
+			'/Images/elephant2.jpg',
+			'/Images/elephant3.jpg',
+		]
+		let showData = document.getElementById("showData");
+		let datalist = document.getElementById("suggestions");
+		const searching = () => {
+			let demo = document.getElementById("demo");
+			let search = document.getElementById("search");
+
+			search = (search.value).toLowerCase();
+			demo.innerText = search;
+			// console.log(search);
+			if (demo.innerText == "fish") {
+				for (let indexFish = 0; indexFish < fish.length; indexFish++) {
+					console.log(fish[indexFish]);
+					// showData.innerHTML += (`<img src=${fish[indexFish]}>`);
+					showData.insertAdjacentHTML("afterbegin", `<img src=${fish[indexFish]}>`)
+				}
+				demo.innerText = "OK!";
+			}
+			else if (demo.innerText == "elephant") {
+				for (let indexElephant = 0; indexElephant < elephant.length; indexElephant++) {
+					console.log(elephant[indexElephant]);
+					showData.innerHTML += (`<img src=${elephant[indexElephant]}>`)
+				}
+			}
+			else {
+				demo.innerText = "Data isn't available!";
+			}
+
+		};
+		// showData.append("<strong></strong>");
+		// showData.insertAdjacentHTML("afterbegin", "<strong>DUDE PERFECT!</strong>")
+		const reset = () => {
+			showData.replaceChildren();
+		};
+
+		const suggestions = () => {
+			for (let indexList = 0; indexList < lists.length; indexList++) {
+				datalist.insertAdjacentHTML("afterbegin", `<option value=${lists[indexList]}></option>`);
+			}
+		};
+		suggestions();
+	</script>
+</body>
+
+</html>

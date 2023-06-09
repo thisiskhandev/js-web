@@ -1,0 +1,5 @@
+let metaTitle = jQuery('meta[property="og:title"]').attr( "content" );
+// console.log(metaTitle);
+let ArchiveMetaTitle = metaTitle.slice(0, -9);
+jQuery('.archive .shop-container').prepend("<h1>"+ArchiveMetaTitle+"</h1>");
+// metaTitle.trim('Archives');

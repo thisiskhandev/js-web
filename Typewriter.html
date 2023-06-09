@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typewriter</title>
+    <style>
+      #root {
+        width: 500px;
+        border: 1px solid #212121;
+        padding: 10px;
+        height: 18vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Typewriter</h1>
+    <p id="root"></p>
+    <button onclick="typeWriter()">Click</button>
+    <script>
+      const showData = document.getElementById("root");
+      let i = 0;
+      let txt =
+        "Mollit nostrud Lorem esse aliqua commodo pariatur duis eu aute velit. Tempor sit ipsum veniam ullamco ea id sit ipsum ex. Nulla id dolor eu quis ea non. Dolore quis Lorem est cillum est consectetur consectetur proident sit. Ut eiusmod eu sint proident. Id laboris officia officia non aliquip velit irure pariatur. Mollit nostrud Lorem esse aliqua commodo pariatur duis eu aute velit. Tempor sit ipsum veniam ullamco ea id sit ipsum ex. Nulla id dolor eu quis ea non. Dolore quis Lorem est cillum est consectetur consectetur proident sit. Ut eiusmod eu sint proident. Id laboris officia officia non aliquip velit irure pariatur.";
+      let speed = 0;
+      const typeWriter = () => {
+        if (i < txt.length) {
+          // showData.innerText += txt.charAt(i);
+          showData.innerText = showData.innerText + txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      };
+      showData.style.wordBreak = "break-all";
+      showData.style.color = "red";
+    </script>
+  </body>
+</html>
