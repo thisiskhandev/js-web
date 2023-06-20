@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+      #root {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        align-items: center;
+        justify-items: center;
+        width: 10%;
+        row-gap: 10px;
+      }
+      #root h3 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <button id="getval" style="margin-top: 30px">
+      Enter a different table
+    </button>
+    <script>
+      let root = document.getElementById("root");
+      let inpVal = "";
+      let getval = document.getElementById("getval");
+      getval.addEventListener("click", function () {
+        let getPrompt = Number(prompt("Enter a table number."));
+        inpVal = getPrompt;
+        root.innerHTML = "";
+        if (!inpVal) {
+          let error = document.createElement("h2");
+          error.innerText = "Please enter a Number only!";
+          root.appendChild(error);
+        } else {
+          tableFun(inpVal);
+        }
+      });
+      function tableFun(inpVal = 2) {
+        for (let index = 1; index <= 10; index++) {
+          let firstInd = document.createElement("h3");
+          let secondInd = document.createElement("h3");
+          let thirdInd = document.createElement("h3");
+          let fourthInd = document.createElement("h3");
+          let mainTableInd = document.createElement("h3");
+          firstInd.innerText = inpVal;
+          root.appendChild(firstInd);
+          secondInd.innerText = "X";
+          root.appendChild(secondInd);
+          thirdInd.innerText = index;
+          root.appendChild(thirdInd);
+          fourthInd.innerText = "=";
+          root.appendChild(fourthInd);
+          mainTableInd.innerText = inpVal * index;
+          root.appendChild(mainTableInd);
+        }
+      }
+      tableFun();
+    </script>
+  </body>
+</html>
